@@ -1,12 +1,29 @@
 import React from 'react';
+import './App.css';
 
 // render the button
 class Square extends React.Component{
 
+    constructor(props){
+        super(props);
+
+        this.state={
+            value:null
+        }
+
+        this.handleOnClick=this.handleOnClick.bind(this);
+    }
+
+    handleOnClick=()=>{
+        this.setState({
+
+        })
+    }
     render(){
+
         return(
-            <button type="button" className="square"> 
-                {/* to do later on */}
+            <button type="button" className="square" onClick={this.handleOnClick}> 
+                {this.props.value}
             </button>
         )
     }
@@ -15,10 +32,10 @@ class Square extends React.Component{
 // renders nine squares
 class Board extends React.Component{
 
-    // method to return the squares
+    // method to return the squares with a passed value
     displaySquare(i){
         return(
-            <Square />
+            <Square value={i} />
         )
     }
 
@@ -29,7 +46,7 @@ class Board extends React.Component{
 
         return(
             <div>
-                <div>
+                <div className='nextPlayer'>
                     {nextPlayer}
                 </div>
 
@@ -56,7 +73,7 @@ class Board extends React.Component{
     }
 }
 
-// render a board with placeholder values
+// render a board with placeholder values (0-8)
 class Game extends React.Component{
 
     render(){
@@ -66,7 +83,7 @@ class Game extends React.Component{
                     < Board />
                 </div>
 
-                <div className='game-infor'> 
+                <div className='game-info'> 
                     <div>
                         {/* status */}
                     </div>
