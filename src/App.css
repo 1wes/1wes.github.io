@@ -5,7 +5,7 @@ body{
 }
 
 .board-row{
-     clear: both;/* no element appears to the left or right of the floated element*/
+    clear: both;/* no element appears to the left or right of the floated element*/
     display: table; /*element to behave like a table*/
     content: "";
 }
