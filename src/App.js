@@ -4,25 +4,10 @@ import './App.css';
 // render the button
 class Square extends React.Component{
 
-    constructor(props){
-        super(props);
-
-        this.state={
-            value:null
-        }
-
-        this.handleOnClick=this.handleOnClick.bind(this);
-    }
-
-    handleOnClick=()=>{
-        this.setState({
-
-        })
-    }
     render(){
 
         return(
-            <button type="button" className="square" onClick={this.handleOnClick}> 
+            <button type="button" className="square" onClick={()=>this.props.onClick()}> 
                 {this.props.value}
             </button>
         )
@@ -32,11 +17,36 @@ class Square extends React.Component{
 // renders nine squares
 class Board extends React.Component{
 
+    constructor(props){
+        super(props);
+
+        // declare state of nine null values in an array
+        this.state={
+            // fill each square in the array with a null value
+            squares:Array(9).fill(null)
+        }
+
+        this.handleClick=this.handleClick.bind(this);
+    }
+
     // method to return the squares with a passed value
     displaySquare(i){
         return(
-            <Square value={i} />
+            <Square value={this.state.squares[i]}  onClick={()=>this.handleClick(i)}/>
         )
+    }
+
+    handleClick=(i)=>{
+
+        // create a copy of the array that will be modified
+        const squares=this.state.squares.slice();
+
+        squares[i]='X';
+
+        this.setState({
+            squares:squares
+        })
+
     }
 
     render(){
