@@ -33,8 +33,6 @@ body{
     color: whitesmoke;
 }
 
-
-
 .square:focus{
     outline: invert;
 }
