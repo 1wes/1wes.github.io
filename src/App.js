@@ -2,16 +2,13 @@ import React from 'react';
 import './App.css';
 
 // render the button
-class Square extends React.Component{
+function Square(props){
 
-    render(){
-
-        return(
-            <button type="button" className="square" onClick={()=>this.props.onClick()}> 
-                {this.props.value}
-            </button>
-        )
-    }
+    return(
+        <button type='button' className='square' onClick={props.onClick}>
+            {props.value}
+        </button>
+    )
 }
 
 // renders nine squares
@@ -23,7 +20,9 @@ class Board extends React.Component{
         // declare state of nine null values in an array
         this.state={
             // fill each square in the array with a null value
-            squares:Array(9).fill(null)
+            squares:Array(9).fill(null),
+            // set player X as the default --or first player
+            xIsNext:true
         }
 
         this.handleClick=this.handleClick.bind(this);
@@ -38,13 +37,16 @@ class Board extends React.Component{
 
     handleClick=(i)=>{
 
-        // create a copy of the array that will be modified
+        // create a copy of the array that will be modified --immutabillity
         const squares=this.state.squares.slice();
 
-        squares[i]='X';
+        // check which player is next --turn taking
+        squares[i]=this.state.xIsNext? 'X':'O';
 
         this.setState({
-            squares:squares
+            squares:squares,
+            // update the next player
+            xIsNext:!this.state.xIsNext
         })
 
     }
@@ -52,7 +54,7 @@ class Board extends React.Component{
     render(){
 
         // next player
-        const nextPlayer="Next Player: X";
+        const nextPlayer="Next Player:"+(this.state.xIsNext? 'X':'O');
 
         return(
             <div>
