@@ -40,6 +40,11 @@ class Board extends React.Component{
         // create a copy of the array that will be modified --immutabillity
         const squares=this.state.squares.slice();
 
+        // check if a player has won or the square is clicked
+        if(calculateTheWinner(squares) || squares[i]){
+            return;
+        }
+
         // check which player is next --turn taking
         squares[i]=this.state.xIsNext? 'X':'O';
 
@@ -52,6 +57,16 @@ class Board extends React.Component{
     }
 
     render(){
+
+        let winner=calculateTheWinner(this.state.squares);
+
+        let status;
+
+        if(winner){
+            status='Winner is: ' + winner;
+        }else{
+            status='Next player is: ' + (this.state.xIsNext? 'X':'O')
+        }
 
         // next player
         const nextPlayer="Next Player:"+(this.state.xIsNext? 'X':'O');
@@ -90,19 +105,6 @@ class Game extends React.Component{
 
     render(){
 
-        const winner=calculateTheWinner(this.state.squares);
-
-        let status;
-
-        if(winner){
-
-            status='Winner is: ' + winner;
-        }
-        else{
-
-            status='Next player is' + (this.state.xIsNext? 'X':'O');
-        }
-        
         return(
             <div className='game'>
                 <div className='game-board'>
@@ -136,17 +138,17 @@ function calculateTheWinner(squares){
         [2,5,8],
         [0,4,8],
         [2,4,6]
-    ]
+    ];
 
 
     // compare whether any of the combinations has been achieved
-    for(let i=0; i<=winnerCombinations.length; i++){
+    for(let i=0; i<winnerCombinations.length; i++){
 
-        const [a, b, c]=winnerCombinations[i];
+        const [a, b, c] =winnerCombinations[i];
 
-        if(squares[a]&&squares[a]===squares[b]&&squares[a]===squares[c]){
+        if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
 
-            return squares[a];
+            console.log(squares[a]) 
         }
     }
 
