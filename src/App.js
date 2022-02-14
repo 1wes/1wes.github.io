@@ -145,7 +145,16 @@ function calculateTheWinner(squares){
 
         if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
 
+            // window.location.reload(true);
+            // set timer before reloading
+            setInterval(()=>{
+
+                window.location.reload(true);
+                
+            }, 1000);
+
             return squares[a]; 
+
         }
     }
 
