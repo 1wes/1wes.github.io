@@ -1,6 +1,20 @@
 import React from 'react';
 import './App.css';
 
+class TopBanner extends React.Component{
+
+    render(){
+
+        return(
+            <div className="top-banner" style={{color:"whitesmoke", fontWeight:"bold"}}>
+                <marquee width="50%" direction="left">
+                    {this.props.bannerMessage}
+                </marquee>
+            </div>
+        )
+    }
+}
+
 // render the button
 function Square(props){
 
@@ -102,23 +116,31 @@ class Game extends React.Component{
 
     render(){
 
+        let message="Tie functionality will be added soon"
+
         return(
-            <div className='game'>
-                <div className='game-board'>
-                    < Board />
-                </div>
+            <div>
+                <TopBanner bannerMessage={message}/>
 
-                <div className='game-info'> 
-                    <div>
-                        {/* status */}
+                <div className='game'>
+                    <div className='game-board'>
+                        < Board />
                     </div>
 
-                    <div>
-                        {/* To Do */}
-                    </div>
-                </div>
+                    <div className='game-info'> 
+                        <div>
+                            {/* status */}
+                        </div>
 
+                        <div>
+                            {/* To Do */}
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
+
         )
     }
 }
