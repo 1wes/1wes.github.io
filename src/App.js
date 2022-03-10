@@ -116,7 +116,7 @@ class Game extends React.Component{
 
     render(){
 
-        let message="Tie functionality will be added soon"
+        let message="Tie/Draw functionality will be added soon"
 
         return(
             <div>
