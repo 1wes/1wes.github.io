@@ -1,5 +1,12 @@
 import React from 'react';
 import './App.css';
+import ReactGA from 'react-ga';
+
+// intialize the property tracking ID
+const tracking_id="G-1R65DNZP1P";
+
+ReactGA.initialize(tracking_id);
+
 
 class TopBanner extends React.Component{
 
@@ -114,6 +121,13 @@ class Board extends React.Component{
 // render a board with placeholder values (0-8)
 class Game extends React.Component{
 
+    // on this page/component being added to a tree, 
+    componentDidMount(){
+
+        // tracking the page views
+        ReactGA.pageview(window.location.pathname);
+    }
+    
     render(){
 
         let message="Tie/Draw functionality will be added soon"
