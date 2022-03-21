@@ -43,7 +43,7 @@ class Board extends React.Component{
             // fill each square in the array with a null value
             squares:Array(9).fill(null),
             // set player X as the default --or first player
-            xIsNext:true
+            xIsNext:true, 
         }
 
         this.handleClick=this.handleClick.bind(this);
@@ -83,9 +83,15 @@ class Board extends React.Component{
 
         let nextPlayer;
 
-        if(winner){
+        // if two of the responses are not returning draw   
+        if(winner && winner!=='draw'){
+
             nextPlayer='Winner is: ' + winner;
-        }else{
+
+        }else if(winner && winner==='draw'){
+            nextPlayer='It was a ' + winner;
+        }
+        else{
             nextPlayer='Next player is: ' + (this.state.xIsNext? 'X':'O')
         }
         
@@ -130,7 +136,7 @@ class Game extends React.Component{
     
     render(){
 
-        let message="Tie/Draw functionality will be added soon"
+        let message="Tie/Draw functionality will be added soon";
 
         return(
             <div>
@@ -173,7 +179,6 @@ function calculateTheWinner(squares){
         [2,4,6]
     ];
 
-
     // compare whether any of the combinations has been achieved
     for(let i=0; i<winnerCombinations.length; i++){
 
@@ -181,7 +186,6 @@ function calculateTheWinner(squares){
 
         if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
 
-            // window.location.reload(true);
             // set timer before reloading
             setInterval(()=>{
 
@@ -191,9 +195,16 @@ function calculateTheWinner(squares){
 
             return squares[a]; 
 
+        }else if(!squares.includes(null)){
+
+            setInterval(()=>{
+                window.location.reload(true);
+            }, 1000);
+
+            return 'draw';
         }
     }
 
-    // incase of a tie, 
+    // game continues since theres no winner or draw yet
     return null;
 }
