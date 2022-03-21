@@ -25,6 +25,7 @@ body{
 .nextPlayer{
     margin-bottom: 10px ;
     color: whitesmoke;
+    padding-bottom: 10px;
 }
 
 /* the individual button that will display X or O */
