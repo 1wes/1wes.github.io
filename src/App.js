@@ -149,12 +149,17 @@ class Game extends React.Component{
 
                     <div className='game-info'> 
                         <div>
-                            {/* status */}
+                            <div className='winner-count-header'>
+                                Winner count  --COMING SOON
+                            </div>
+
+                            <div className=''>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
 
-                        <div>
-                            {/* To Do */}
-                        </div>
                     </div>
 
                 </div>
