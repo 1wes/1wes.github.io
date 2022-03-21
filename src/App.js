@@ -8,19 +8,19 @@ const tracking_id="G-1R65DNZP1P";
 ReactGA.initialize(tracking_id);
 
 
-class TopBanner extends React.Component{
+// class TopBanner extends React.Component{
 
-    render(){
+//     render(){
 
-        return(
-            <div className="top-banner" style={{color:"whitesmoke", fontWeight:"bold"}}>
-                <marquee width="50%" direction="left">
-                    {this.props.bannerMessage}
-                </marquee>
-            </div>
-        )
-    }
-}
+//         return(
+//             <div className="top-banner" style={{color:"whitesmoke", fontWeight:"bold"}}>
+//                 <marquee width="50%" direction="left">
+//                     {this.props.bannerMessage}
+//                 </marquee>
+//             </div>
+//         )
+//     }
+// }
 
 // render the button
 function Square(props){
@@ -136,11 +136,11 @@ class Game extends React.Component{
     
     render(){
 
-        let message="Tie/Draw functionality will be added soon";
+        // let message="Tie/Draw functionality will be added soon";
 
         return(
             <div>
-                <TopBanner bannerMessage={message}/>
+                {/* <TopBanner bannerMessage={message}/> */}
 
                 <div className='game'>
                     <div className='game-board'>
