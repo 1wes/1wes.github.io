@@ -86,10 +86,10 @@ class Board extends React.Component{
         // if two of the responses are not returning draw   
         if(winner && winner!=='draw'){
 
-            nextPlayer='Winner is: ' + winner;
+            nextPlayer='Winner is: ' + winner +' !'
 
         }else if(winner && winner==='draw'){
-            nextPlayer='It was a ' + winner;
+            nextPlayer='It is a ' + winner+' !'
         }
         else{
             nextPlayer='Next player is: ' + (this.state.xIsNext? 'X':'O')
@@ -154,9 +154,9 @@ class Game extends React.Component{
                             </div>
 
                             <div className=''>
-                                <div></div>
-                                <div></div>
-                                <div></div>
+                                <div>dfhhdjfhsdjh</div>
+                                <div>dfjhkjsdhfh</div>
+                                <div>lskdjjkjksjk</div>
                             </div>
                         </div>
 
@@ -203,7 +203,9 @@ function calculateTheWinner(squares){
         }else if(!squares.includes(null)){
 
             setInterval(()=>{
+
                 window.location.reload(true);
+
             }, 1000);
 
             return 'draw';
