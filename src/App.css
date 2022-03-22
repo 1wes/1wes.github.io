@@ -55,13 +55,31 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    vertical-align:middle;
-    position: relative;
-    top: 150%;
+    /* vertical-align:middle; */
+    /* position: relative; */
+    /* top: 150%; */
     transform: translateY(80%);
 }
 
 .game-info{
     margin-left: 100px;
     color: white;
+}
+
+
+/* mobile styles for responsive view */
+
+/* for medium devices, up to 480px */
+@media only screen and (max-width:480px){
+
+    .game{
+        display: flex;
+        flex-direction: column;
+        transform: translateY(45%);
+    }
+
+    .game-info{
+        margin-left: 0 !important;
+        margin-top: 20px;
+    }
 }
