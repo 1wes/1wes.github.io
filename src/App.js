@@ -85,7 +85,7 @@ class Board extends React.Component{
 
         // if two of the responses are not returning draw   
         if(winner && winner!=='draw'){
-
+            
             nextPlayer='Winner is: ' + winner +' !'
 
         }else if(winner && winner==='draw'){
@@ -150,13 +150,13 @@ class Game extends React.Component{
                     <div className='game-info'> 
                         <div>
                             <div className='winner-count-header'>
-                                Winner count  --COMING SOON
+                                Winner count
                             </div>
 
-                            <div className=''>
-                                <div>dfhhdjfhsdjh</div>
-                                <div>dfjhkjsdhfh</div>
-                                <div>lskdjjkjksjk</div>
+                            <div className='winner-counter'>
+                                <div>X:</div>
+                                <div>Draw:</div>
+                                <div>O:</div>
                             </div>
                         </div>
 
