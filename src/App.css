@@ -75,7 +75,7 @@ body{
     .game{
         display: flex;
         flex-direction: column;
-        transform: translateY(45%);
+        transform: translateY(35%);
     }
 
     .game-info{
