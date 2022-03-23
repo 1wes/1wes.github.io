@@ -35,72 +35,33 @@ function Square(props){
 // renders nine squares
 class Board extends React.Component{
 
-    constructor(props){
-        super(props);
-
-        // declare state of nine null values in an array
-        this.state={
-            // fill each square in the array with a null value
-            squares:Array(9).fill(null),
-            // set player X as the default --or first player
-            xIsNext:true, 
-        }
-
-        this.handleClick=this.handleClick.bind(this);
-    }
-
     // method to return the squares with a passed value
     displaySquare(i){
         return(
-            <Square value={this.state.squares[i]}  onClick={()=>this.handleClick(i)}/>
+            <Square value={this.props.squares[i]}  onClick={()=>this.props.onClick(i)}/>
         )
-    }
-
-    handleClick=(i)=>{
-
-        // create a copy of the array that will be modified --immutabillity
-        const squares=this.state.squares.slice();
-
-        // check if a player has won or the square is clicked
-        if(calculateTheWinner(squares) || squares[i]){
-            return;
-        }
-
-        // check which player is next --turn taking
-        squares[i]=this.state.xIsNext? 'X':'O';
-
-        this.setState({
-            squares:squares,
-            // update the next player
-            xIsNext:!this.state.xIsNext
-        })
-
     }
 
     render(){
 
-        const winner=calculateTheWinner(this.state.squares);
+        // const winner=calculateTheWinner(this.state.squares);
 
-        let nextPlayer;
+        // let nextPlayer;
 
-        // if two of the responses are not returning draw   
-        if(winner && winner!=='draw'){
+        // // if two of the responses are not returning draw   
+        // if(winner && winner!=='draw'){
             
-            nextPlayer='Winner is: ' + winner +' !'
+        //     nextPlayer='Winner is: ' + winner +' !'
 
-        }else if(winner && winner==='draw'){
-            nextPlayer='It is a ' + winner+' !'
-        }
-        else{
-            nextPlayer='Next player is: ' + (this.state.xIsNext? 'X':'O')
-        }
+        // }else if(winner && winner==='draw'){
+        //     nextPlayer='It is a ' + winner+' !'
+        // }
+        // else{
+        //     nextPlayer='Next player is: ' + (this.state.xIsNext? 'X':'O')
+        // }
         
         return(
             <div>
-                <div className='nextPlayer'>
-                    {nextPlayer}
-                </div>
-
                 {/* use div to display a bunch of three blocks and not inline squares */}
                 <div className='board-row'>
                     {this.displaySquare(0)}
@@ -127,6 +88,41 @@ class Board extends React.Component{
 // render a board with placeholder values (0-8)
 class Game extends React.Component{
 
+    constructor(props){
+        super(props);
+
+        // declare state of nine null values in an array
+        this.state={
+            // fill each square in the array with a null value
+            squares:Array(9).fill(null),
+            // set player X as the default --or first player
+            xIsNext:true, 
+        }
+    }
+
+    handleClick=(i)=>{
+
+        // create a copy of the array that will be modified --immutabillity
+        const squares=this.state.squares.slice();
+
+        // check if a player has won or the square is clicked
+        if(calculateTheWinner(squares) || squares[i]){
+            return;
+        }
+
+        // check which player is next --turn taking
+        squares[i]=this.state.xIsNext? 'X':'O';
+
+        this.setState({
+            squares:squares,
+            // update the next player
+            xIsNext:!this.state.xIsNext, 
+        })
+
+    }
+
+ 
+
     // on this page/component being added to a tree, 
     componentDidMount(){
 
@@ -136,6 +132,22 @@ class Game extends React.Component{
     
     render(){
 
+        const winner=calculateTheWinner(this.state.squares);
+
+        let nextPlayer;
+
+        // if two of the responses are not returning draw   
+        if(winner && winner!=='draw'){
+            
+            nextPlayer='Winner is: ' + winner +' !'
+
+        }else if(winner && winner==='draw'){
+            nextPlayer='It is a ' + winner+' !'
+        }
+        else{
+            nextPlayer='Next player is: ' + (this.state.xIsNext? 'X':'O')
+        }
+
         // let message="Tie/Draw functionality will be added soon";
 
         return(
@@ -143,22 +155,33 @@ class Game extends React.Component{
                 {/* <TopBanner bannerMessage={message}/> */}
 
                 <div className='game'>
+
+
+
                     <div className='game-board'>
-                        < Board />
+                        <div className='nextPlayer'>
+                            {nextPlayer}
+                        </div>
+                        
+                        < Board squares={this.state.squares} onClick={(i)=>this.handleClick(i)}/>
                     </div>
 
                     <div className='game-info'> 
                         <div>
+
+
                             <div className='winner-count-header'>
                                 Winner count
                             </div>
 
                             <div className='winner-counter'>
-                                <div>X:</div>
-                                <div>Draw:</div>
-                                <div>O:</div>
+                                <div>X: {this.state.xCounter} </div>
+                                <div>Draw: {this.state.counter} </div>
+                                <div>O: {this.state.oCounter} </div>
                             </div>
                         </div>
+
+                        <div className=""></div>
 
                     </div>
 
