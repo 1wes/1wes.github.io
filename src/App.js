@@ -43,22 +43,6 @@ class Board extends React.Component{
     }
 
     render(){
-
-        // const winner=calculateTheWinner(this.state.squares);
-
-        // let nextPlayer;
-
-        // // if two of the responses are not returning draw   
-        // if(winner && winner!=='draw'){
-            
-        //     nextPlayer='Winner is: ' + winner +' !'
-
-        // }else if(winner && winner==='draw'){
-        //     nextPlayer='It is a ' + winner+' !'
-        // }
-        // else{
-        //     nextPlayer='Next player is: ' + (this.state.xIsNext? 'X':'O')
-        // }
         
         return(
             <div>
@@ -85,6 +69,30 @@ class Board extends React.Component{
     }
 }
 
+let lsxCounter=localStorage.getItem("localStoragexCounter");
+
+let retrievedxCounter=parseInt(lsxCounter, 10);
+
+let displayxCounter;
+
+if(isNaN(retrievedxCounter)){
+    displayxCounter=0
+}else{
+    displayxCounter=retrievedxCounter;
+}
+
+let lsoCounter=localStorage.getItem("localStorageoCounter");
+
+let retrievedoCounter=parseInt(lsoCounter, 10);
+
+let displayoCounter;
+
+if(isNaN(retrievedoCounter)){
+    displayoCounter=0
+}else{
+    displayoCounter=retrievedoCounter;
+}
+
 // render a board with placeholder values (0-8)
 class Game extends React.Component{
 
@@ -101,7 +109,6 @@ class Game extends React.Component{
     }
 
     handleClick=(i)=>{
-
         // create a copy of the array that will be modified --immutabillity
         const squares=this.state.squares.slice();
 
@@ -121,8 +128,6 @@ class Game extends React.Component{
 
     }
 
- 
-
     // on this page/component being added to a tree, 
     componentDidMount(){
 
@@ -140,6 +145,9 @@ class Game extends React.Component{
         if(winner && winner!=='draw'){
             
             nextPlayer='Winner is: ' + winner +' !'
+
+            // check if winner is X or O
+ 
 
         }else if(winner && winner==='draw'){
             nextPlayer='It is a ' + winner+' !'
@@ -175,9 +183,9 @@ class Game extends React.Component{
                             </div>
 
                             <div className='winner-counter'>
-                                <div>X: {this.state.xCounter} </div>
-                                <div>Draw: {this.state.counter} </div>
-                                <div>O: {this.state.oCounter} </div>
+                                <div className="display-counter">X: <span>{displayxCounter}</span></div>
+                                <div className="display-counter">Draw: <span>0</span></div>
+                                <div className="display-counter">O: <span>{displayoCounter}</span> </div>
                             </div>
                         </div>
 
@@ -215,6 +223,43 @@ function calculateTheWinner(squares){
         if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
 
             // set timer before reloading
+            if(squares[a]==="X"){
+
+                if(localStorage.getItem("localStoragexCounter")===null){
+
+                    localStorage.setItem("localStoragexCounter", "0")
+    
+                }else{
+                    let xCounter=localStorage.getItem("localStoragexCounter");
+    
+                    localStorage.setItem("localStoragexCounter", xCounter.toString())
+                }
+
+                let latestxCounter=parseInt(localStorage.getItem("localStoragexCounter"), 10);
+
+                latestxCounter=latestxCounter+1;
+
+                localStorage.setItem("localStoragexCounter", latestxCounter.toString());
+
+            }else{
+                if(localStorage.getItem("localStorageoCounter")===null){
+
+                    localStorage.setItem("localStorageoCounter", "0");
+    
+                }else{
+    
+                    let oCounter=localStorage.getItem("localStorageoCounter");
+    
+                    localStorage.setItem("localStorageoCounter", oCounter.toString());
+                }
+
+                let latestoCounter=parseInt(localStorage.getItem("localStorageoCounter"), 10);
+
+                latestoCounter=latestoCounter+1;
+
+                localStorage.setItem("localStorageoCounter", latestoCounter.toString());
+            }
+
             setInterval(()=>{
 
                 window.location.reload(true);
