@@ -75,6 +75,14 @@ body{
     justify-content: space-between;
 }
 
+.display-counter{
+    font-weight: bold;
+    color:orange;
+}
+
+div .display-counter span{
+    color:rgba(0, 255, 255, 0.6);
+}
 /* mobile styles for responsive view */
 
 /* for medium devices, up to 480px */
