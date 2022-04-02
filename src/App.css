@@ -89,6 +89,14 @@ div .display-counter span{
     color:rgba(0, 255, 255, 0.6);
 }
 
+.reset-counter-button{
+    margin-top: 3em;
+}
+
+#reset-button{
+    text-transform: none;
+    color: whitesmoke;
+}
 /* div.display-counter:not(:last-child){
     border-right: 2px solid whitesmoke;
 } */
@@ -107,6 +115,7 @@ div .display-counter span{
     .game-info{
         margin-left: 0 !important;
         width: 200px;
+        margin-top: 1em;
     }
 
     .winner-count-header{
@@ -114,6 +123,10 @@ div .display-counter span{
     }
 
     .winner-counter{
-        margin-top: 5px;
+        margin-top: 1em;
+    }
+    
+    .reset-counter-button{
+        margin-top: 2em;
     }
 }
