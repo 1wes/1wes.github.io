@@ -69,6 +69,7 @@ class Board extends React.Component{
     }
 }
 
+// player X win counter
 let lsxCounter=localStorage.getItem("localStoragexCounter");
 
 let retrievedxCounter=parseInt(lsxCounter, 10);
@@ -81,6 +82,7 @@ if(isNaN(retrievedxCounter)){
     displayxCounter=retrievedxCounter;
 }
 
+// player O win counter
 let lsoCounter=localStorage.getItem("localStorageoCounter");
 
 let retrievedoCounter=parseInt(lsoCounter, 10);
@@ -91,6 +93,19 @@ if(isNaN(retrievedoCounter)){
     displayoCounter=0
 }else{
     displayoCounter=retrievedoCounter;
+}
+
+// draw counter
+let lsdrawCounter=localStorage.getItem("localStorageDrawCounter");
+
+let retrieveddrawCounter=parseInt(lsdrawCounter, 10);
+
+let displaydrawCounter;
+
+if(isNaN(retrieveddrawCounter)){
+    displaydrawCounter=0
+}else{
+    displaydrawCounter=retrieveddrawCounter;
 }
 
 // render a board with placeholder values (0-8)
@@ -184,7 +199,7 @@ class Game extends React.Component{
 
                             <div className='winner-counter'>
                                 <div className="display-counter">X: <span>{displayxCounter}</span></div>
-                                <div className="display-counter">Draw: <span>0</span></div>
+                                <div className="display-counter">Draw: <span>{displaydrawCounter}</span></div>
                                 <div className="display-counter">O: <span>{displayoCounter}</span> </div>
                             </div>
                         </div>
@@ -269,6 +284,22 @@ function calculateTheWinner(squares){
             return squares[a]; 
 
         }else if(!squares.includes(null)){
+
+            if(localStorage.getItem("localStorageDrawCounter")===null){
+
+                localStorage.setItem("localStorageDrawCounter", "0");
+            }else{
+
+                let drawCounter=localStorage.getItem("localStorageDrawCounter");
+
+                localStorage.setItem("localStorageDrawCounter", drawCounter.toString());
+            }
+
+            let latestdrawCounter=parseInt(localStorage.getItem("localStorageDrawCounter"), 10);
+
+            latestdrawCounter=latestdrawCounter+1;
+
+            localStorage.setItem("localStorageDrawCounter", latestdrawCounter.toString());
 
             setInterval(()=>{
 
