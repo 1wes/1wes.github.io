@@ -122,6 +122,8 @@ class Game extends React.Component{
             // set player X as the default --or first player
             xIsNext:true, 
         }
+
+        this.handleCounterReset=this.handleCounterReset.bind(this);
     }
 
     handleClick=(i)=>{
@@ -142,6 +144,22 @@ class Game extends React.Component{
             xIsNext:!this.state.xIsNext, 
         })
 
+    }
+
+    handleCounterReset=()=>{
+        // check if the counter is at zero
+        if(localStorage.length>0){
+
+            if(window.confirm("This action will reset the Counter to 0 !")==true){
+                localStorage.clear();
+
+                window.location.reload(true)
+            }else{
+                // do nothing
+            }
+        }else{
+                alert("The counter is already at 0!")
+        }
     }
 
     // on this page/component being added to a tree, 
@@ -207,7 +225,7 @@ class Game extends React.Component{
                             {/* <hr/> */}
 
                             <div className="reset-counter-button">
-                                <Button variant="outlined" size="small" color='error' id="reset-button" fullWidth>
+                                <Button variant="outlined" size="small" color='error' id="reset-button" fullWidth onClick={this.handleCounterReset}>
                                     Reset Counter
                                 </Button>
                             </div>
