@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ReactGA from 'react-ga';
+import Button from '@mui/material/Button';
 
 // intialize the property tracking ID
 const tracking_id="G-1R65DNZP1P";
@@ -201,6 +202,14 @@ class Game extends React.Component{
                                 <div className="display-counter">X: <span>{displayxCounter}</span></div>
                                 <div className="display-counter">Draw: <span>{displaydrawCounter}</span></div>
                                 <div className="display-counter">O: <span>{displayoCounter}</span> </div>
+                            </div>
+                            
+                            {/* <hr/> */}
+
+                            <div className="reset-counter-button">
+                                <Button variant="outlined" size="small" color='error' id="reset-button" fullWidth>
+                                    Reset Counter
+                                </Button>
                             </div>
                         </div>
 
