@@ -150,7 +150,7 @@ class Game extends React.Component{
         // check if the counter is at zero
         if(localStorage.length>0){
 
-            if(window.confirm("This action will reset the Counter to 0 !")==true){
+            if(window.confirm("This action will reset the Counter to 0 !")===true){
                 localStorage.clear();
 
                 window.location.reload(true)
@@ -158,7 +158,7 @@ class Game extends React.Component{
                 // do nothing
             }
         }else{
-                alert("The counter is already at 0!")
+            alert("The counter is already at 0!")
         }
     }
 
@@ -178,10 +178,7 @@ class Game extends React.Component{
         // if two of the responses are not returning draw   
         if(winner && winner!=='draw'){
             
-            nextPlayer='Winner is: ' + winner +' !'
-
-            // check if winner is X or O
- 
+            nextPlayer='Winner is: ' + winner +' !' 
 
         }else if(winner && winner==='draw'){
             nextPlayer='It is a ' + winner+' !'
@@ -190,16 +187,9 @@ class Game extends React.Component{
             nextPlayer='Next player is: ' + (this.state.xIsNext? 'X':'O')
         }
 
-        // let message="Tie/Draw functionality will be added soon";
-
         return(
             <div>
-                {/* <TopBanner bannerMessage={message}/> */}
-
                 <div className='game'>
-
-
-
                     <div className='game-board'>
                         <div className='nextPlayer'>
                             {nextPlayer}
@@ -211,7 +201,6 @@ class Game extends React.Component{
                     <div className='game-info'> 
                         <div>
 
-
                             <div className='winner-count-header'>
                                 Winner count
                             </div>
@@ -222,8 +211,6 @@ class Game extends React.Component{
                                 <div className="display-counter">O: <span>{displayoCounter}</span> </div>
                             </div>
                             
-                            {/* <hr/> */}
-
                             <div className="reset-counter-button">
                                 <Button variant="outlined" size="small" color='error' id="reset-button" fullWidth onClick={this.handleCounterReset}>
                                     Reset Counter
