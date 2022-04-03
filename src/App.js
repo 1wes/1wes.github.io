@@ -111,6 +111,12 @@ if(isNaN(retrieveddrawCounter)){
 
 // render a board with placeholder values (0-8)
 class Game extends React.Component{
+        // on this page/component being added to a tree, 
+    componentDidMount(){
+
+        // tracking the page views
+        ReactGA.pageview(window.location.pathname);
+    }
 
     constructor(props){
         super(props);
@@ -160,13 +166,6 @@ class Game extends React.Component{
         }else{
             alert("The counter is already at 0!")
         }
-    }
-
-    // on this page/component being added to a tree, 
-    componentDidMount(){
-
-        // tracking the page views
-        ReactGA.pageview(window.location.pathname);
     }
     
     render(){
