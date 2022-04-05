@@ -142,7 +142,7 @@ div .display-counter span{
     }
 
     li{
-        margin: 1px 1px 1px -12% !important;
+        margin: 0 1px 1px -12% !important;
     } 
 
     ul li a{
