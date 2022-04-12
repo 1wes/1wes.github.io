@@ -3,6 +3,7 @@ import './App.css';
 import ReactGA from 'react-ga';
 import Button from '@mui/material/Button';
 import Header from './Header&Footer/Header';
+import Footer from './Header&Footer/Footer'
 
 // intialize the property tracking ID
 const tracking_id="G-1R65DNZP1P";
@@ -224,9 +225,11 @@ class Game extends React.Component{
                     </div>
 
                 </div>
+
+                <Footer />
             </div>
 
-
+            
         )
     }
 }
