@@ -109,6 +109,10 @@ div .display-counter span{
 .footer_details{
     margin: 6px 0 0 0;
 }
+
+.copyright-icon{
+    margin-right: 5px;
+}
 /* div.display-counter:not(:last-child){
     border-right: 2px solid whitesmoke;
 } */
