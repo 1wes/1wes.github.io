@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCopyright} from '@fortawesome/free-solid-svg-icons'
 let currentYear;
 
 class Footer extends React.Component{
@@ -10,7 +11,8 @@ class Footer extends React.Component{
             <footer className='footer'>
                 <div className='footer_details'>
                     <span>
-                        Wes, <span className='copyright_year'>2022</span>
+                        <span className='copyright-icon'><FontAwesomeIcon icon={faCopyright} /></span>
+                        Wes <span className='copyright_year'>2022</span>
                     </span>
                 </div>
             </footer>
