@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ReactGA from 'react-ga';
 import Button from '@mui/material/Button';
-import Layout from './Header&Footer/Layout';
+import Layout from './components/Header&Footer/Layout';
 
 // intialize the property tracking ID
 const tracking_id="G-1R65DNZP1P";
