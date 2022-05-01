@@ -93,6 +93,10 @@ div .display-counter span{
     margin-top: 3em;
 }
 
+#instructions-cta{
+    text-transform: none;
+}
+
 #reset-button{
     text-transform: none;
     color: whitesmoke;
