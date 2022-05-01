@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import ReactGA from 'react-ga';
 import Button from '@mui/material/Button';
-import Header from './Header&Footer/Header';
-import Footer from './Header&Footer/Footer'
+import Layout from './Header&Footer/Layout';
 
 // intialize the property tracking ID
 const tracking_id="G-1R65DNZP1P";
@@ -190,7 +189,8 @@ class Game extends React.Component{
 
         return(
             <div>
-                <Header />
+                <Layout />
+                
                 <div className='game'>
                     <div className='game-board'>
                         <div className='nextPlayer'>
@@ -225,10 +225,7 @@ class Game extends React.Component{
                     </div>
 
                 </div>
-
-                <Footer />
             </div>
-
             
         )
     }
