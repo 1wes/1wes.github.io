@@ -93,8 +93,21 @@ div .display-counter span{
     margin-top: 3em;
 }
 
-#instructions-cta{
-    text-transform: none;
+.how-to-play{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.instructions-link{
+    color: white;
+    padding-bottom: 1em;
+    font-size: 14px;
+}
+
+.instructions-link a:visited{
+    color: orange;
 }
 
 #reset-button{
@@ -107,7 +120,7 @@ div .display-counter span{
     position: fixed;
     bottom: 0 !important;
     width: 100%;
-    height: 30px;
+    height: 70px;
 }
 
 .footer_details{
