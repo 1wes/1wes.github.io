@@ -106,6 +106,10 @@ div .display-counter span{
     font-size: 14px;
 }
 
+.instructions-link a:before{
+    color: whitesmoke;
+}
+
 .instructions-link a:visited{
     color: orange;
 }
