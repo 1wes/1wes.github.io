@@ -9,21 +9,6 @@ const tracking_id="G-1R65DNZP1P";
 
 ReactGA.initialize(tracking_id);
 
-
-// class TopBanner extends React.Component{
-
-//     render(){
-
-//         return(
-//             <div className="top-banner" style={{color:"whitesmoke", fontWeight:"bold"}}>
-//                 <marquee width="50%" direction="left">
-//                     {this.props.bannerMessage}
-//                 </marquee>
-//             </div>
-//         )
-//     }
-// }
-
 // render the button
 function Square(props){
 
@@ -190,7 +175,7 @@ class Game extends React.Component{
         return(
             <div>
                 <Layout />
-                
+
                 <div className='game'>
                     <div className='game-board'>
                         <div className='nextPlayer'>
