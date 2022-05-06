@@ -48,6 +48,19 @@ function Instructions(){
                         </li>
 
                     </ul>
+
+                    <div className='video-option'>
+                        or do you prefer to watch a video?
+                    </div>
+
+                    <div className='video-player'>
+                        <iframe width="600" height="275" src="https://www.youtube.com/embed/5SdW0_wTX5c" title="YouTube video player" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+
                 </div>
             </div>
         </main>
