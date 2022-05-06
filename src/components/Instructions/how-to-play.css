@@ -40,7 +40,7 @@ h3{
 .instruction{
     display: flex;
     flex-direction: row;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .instruction p{
@@ -58,6 +58,25 @@ h3{
 
 #o{
     color: red;
+}
+
+.video-option{
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: whitesmoke;
+    margin: 8px 0;
+}
+
+.video-option:before, 
+.video-option::after{
+    content: "";
+    flex-grow: 1;
+    background: whitesmoke;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 8px;
 }
 
 /* mobile styles for the page */
