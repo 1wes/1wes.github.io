@@ -80,6 +80,12 @@ h3{
     margin: 0px 8px;
 }
 
+.video-player{
+    margin-top: 15px;
+    padding-top: 35px;
+    padding-bottom: 40px;
+}
+
 /* mobile styles for the page */
 @media only screen and (max-width:480px){
 
