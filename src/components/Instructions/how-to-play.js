@@ -54,7 +54,7 @@ function Instructions(){
                     </div>
 
                     <div className='video-player'>
-                        <iframe width="600" height="275" src="https://www.youtube.com/embed/5SdW0_wTX5c" title="YouTube video player" 
+                        <iframe width="700" height="275" src="https://www.youtube.com/embed/5SdW0_wTX5c" title="YouTube video player" 
                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
