@@ -1,10 +1,18 @@
+nav{
+    border-bottom: 1px solid white;
+}
+
 ul{
     list-style-type: none;
     display: flex;
     flex-direction: row;
     align-content: flex-start;
     margin: auto;
+    align-items: center;
+}
 
+li{
+    padding-bottom:10px;
 }
 
 ul li a{
