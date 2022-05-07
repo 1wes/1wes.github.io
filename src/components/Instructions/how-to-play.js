@@ -5,7 +5,7 @@ import './how-to-play.css'
 function Instructions(){
 
     return(
-        <main style={{color:"whitesmoke"}}>
+        <main className='main-container' style={{color:"whitesmoke"}}>
             <h3>
                 How to play Tic-Tac-Toe
             </h3>
