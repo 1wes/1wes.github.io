@@ -1,5 +1,6 @@
 h3{
     font-size: 30px;
+    padding-top: 40px;
 }
 
 .main-content{
@@ -46,11 +47,14 @@ h3{
 
 .instruction p{
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
 }
 
 #x, #o{
     font-size: 25px;
+    padding: 2px;
 }
 
 #x{
