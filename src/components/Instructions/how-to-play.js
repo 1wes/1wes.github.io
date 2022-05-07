@@ -59,8 +59,6 @@ function Instructions(){
                             allowfullscreen>
                         </iframe>
                     </div>
-
-
                 </div>
             </div>
         </main>
