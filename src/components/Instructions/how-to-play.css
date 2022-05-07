@@ -106,8 +106,50 @@ h3{
         font-size: 20px;
     }
 
-    .main{
-        height: 20px;
-        max-width: 80%;
+    .main-content{
+        max-width: 100%;
     }
+
+    .instructions-list{
+        display: block;
+        padding: 15px 0 0 50px;
+    }
+
+    .instruction-number{
+        width: 40px;
+        height: 40px;
+        /* margin-bottom: 10px; */
+        border-radius: 50% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .instruction-number span{
+        font-size: 30px;
+    }
+
+    .instruction{
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 30px;
+    }
+
+    .instruction p{
+        margin-left: 30px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    #x, #o{
+        font-size: 15px;
+        padding: 1px;
+    }
+
+    .video-frame{
+        width: 95%;
+        height: 180px;
+    }
+    
+
 }
