@@ -125,6 +125,7 @@ div .display-counter span{
     bottom: 0 !important;
     width: 100%;
     height: 70px;
+    background-color: black;
 }
 
 .footer_details{
