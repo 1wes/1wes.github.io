@@ -89,9 +89,10 @@ h3{
 }
 
 .video-player{
-    margin-top: 15px;
-    padding-top: 35px;
-    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 40px 0;
 }
 
 .video-frame{
