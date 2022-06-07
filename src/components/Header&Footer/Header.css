@@ -1,3 +1,6 @@
+#nav-bar{
+    background-color: black;
+}
 .sticky{
     position: fixed;
     top: 0 !important;
@@ -29,7 +32,7 @@ ul li a{
     text-decoration: none;
     font-size: 30px;
     background-image: linear-gradient(to right, orange,white,  red,whitesmoke);
-    -webkit-background-clip: text;
+    -webkit-background-clip: text;  
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
