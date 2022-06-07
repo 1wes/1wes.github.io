@@ -2,25 +2,33 @@ import React from 'react';
 import './Header.css'
 
 
-// var navbar=document.getElementById("nav-bar");
+var navbar=document.getElementById("nav-bar");
 
-// window.onscroll=function (){
-//     stickNavbar()
-// };
 
-// var navbar=document.getElementById("nav-bar");
-
-// var navbarPosition=navbar.offsetTop;
-
-// function stickNavbar(){
-//     if(window.scrollY>navbarPosition){
-//         navbar.classList.add("sticky");
-//     }else{
-//         navbar.classList.remove("sticky");
-//     }
-// }
 
 class Header extends React.Component{
+
+    // make the header sticky on scroll
+    componentDidMount(){
+
+        window.onscroll=function (){
+            stickNavbar();
+        }
+
+        let navbar=document.getElementById("nav-bar");
+
+        let navbarPosition=navbar.getBoundingClientRect().top;
+
+        let stickNavbar=()=>{
+
+            // if horizontal scroll is greater than position of the navbar
+            if(window.scrollY>navbarPosition){
+                navbar.classList.add("sticky");
+            }else{
+                navbar.classList.remove("sticky");
+            }
+        }
+    }
 
     render(){
 
