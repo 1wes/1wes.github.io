@@ -17,12 +17,14 @@ class Header extends React.Component{
 
         let navbar=document.getElementById("nav-bar");
 
-        let navbarPosition=navbar.getBoundingClientRect().top;
+        // let navbarPosition=navbar.getBoundingClientRect().top;
+
+        // alert(navbarPosition);
 
         let stickNavbar=()=>{
 
             // if horizontal scroll is greater than position of the navbar
-            if(window.scrollY>navbarPosition){
+            if(window.scrollY>60){
                 navbar.classList.add("sticky");
             }else{
                 navbar.classList.remove("sticky");
