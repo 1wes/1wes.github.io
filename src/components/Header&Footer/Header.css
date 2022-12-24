@@ -30,8 +30,8 @@ li{
     padding-bottom:10px;
 }
 
-ul li a{
-    text-decoration: none;
+#header-banner{
+    text-decoration:none !important;
     font-size: 30px;
     background-image: linear-gradient(to right, orange,white,  red,whitesmoke);
     -webkit-background-clip: text;  
