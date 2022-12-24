@@ -1,16 +1,18 @@
-#nav-bar{
-    background-color: black;
-}
 .sticky{
     position: fixed;
     top: 0 !important;
     width: 100%;
+    background-color:rgba(0, 0, 0, 0.9);
+    /* border-bottom: 0; */
 }
 
-.sticky + .main-container{
-    padding-top: 100px;
-}
+/* .sticky + .main-container{
+    padding-top: 5000px;
+} */
 
+.main-container.top-padding{
+    padding-top: 400px;
+}
 nav{
     border-bottom: 1px solid white;
 }
