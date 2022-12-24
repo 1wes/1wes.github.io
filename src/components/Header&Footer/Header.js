@@ -1,6 +1,6 @@
 import React from 'react';
-import './Header.css'
-
+import './Header.css';
+import {Link} from 'react-router-dom';
 
 var navbar=document.getElementById("nav-bar");
 
@@ -37,10 +37,11 @@ class Header extends React.Component{
     render(){
 
         return(
+            
             <nav id='nav-bar'>
                 <ul>
-                    <li style={{color:"whitesmoke"}}>
-                        <a href='javascript:void(0);'>tic-tac-toe</a>
+                    <li>
+                        <Link id='header-banner' to='/'>tic-tac-toe</Link>
                     </li>
                 </ul>
             </nav>
