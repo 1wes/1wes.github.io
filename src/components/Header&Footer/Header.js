@@ -2,24 +2,16 @@ import React from 'react';
 import './Header.css';
 import {Link} from 'react-router-dom';
 
-var navbar=document.getElementById("nav-bar");
-
-
-
 class Header extends React.Component{
 
     // make the header sticky on scroll
     componentDidMount(){
 
-        window.onscroll=function (){
+        window.onscroll=()=>{
             stickNavbar();
         }
 
         let navbar=document.getElementById("nav-bar");
-
-        // let navbarPosition=navbar.getBoundingClientRect().top;
-
-        // alert(navbarPosition);
 
         let stickNavbar=()=>{
 
