@@ -50,7 +50,7 @@ function Instructions(){
                     </ul>
 
                     <div className='video-option'>
-                        or do you prefer to watch a video?
+                        <span>or do you prefer to watch a video?</span>
                     </div>
 
                     <div className='video-player'>
