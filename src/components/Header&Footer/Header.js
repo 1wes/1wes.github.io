@@ -17,11 +17,12 @@ class Header extends React.Component{
 
             // if horizontal scroll is greater than position of the navbar
             if(window.scrollY>60){
-                navbar.classList.add("sticky");
-                navbar.classList.add("top-padding");
+                navbar.style.top='0';
+                navbar.style.backgroundColor='rgba(0, 0, 0, 0.9)';
+                navbar.style.position='fixed';
+                navbar.style.width='100%'
             }else{
-                navbar.classList.remove("sticky");
-                navbar.classList.remove("top-padding");
+                navbar.style.top='-60px'
             }
         }
     }
