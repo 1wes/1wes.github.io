@@ -77,6 +77,11 @@ h3{
     margin: 8px 0;
 }
 
+span.video-prompt{
+    color: rgba(0, 255, 255, 0.6);
+    font-weight: bold;
+}
+
 .video-option:before, 
 .video-option::after{
     content: "";
