@@ -102,6 +102,13 @@ class Game extends React.Component{
 
         // tracking the page views
         ReactGA.pageview(window.location.pathname);
+
+        setInterval(async ()=>{
+            const projects=await fetch('https://mail-projectsapi.onrender.com/projects');
+
+            const jsonProjects=await projects.json();
+
+        }, 14*60*1000)
     }
 
     constructor(props){
