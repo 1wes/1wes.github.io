@@ -10,7 +10,7 @@ root.render(
   // all rendering goes inside HashRouter
   // enables storing the URL in the hash portion since it cannot be sent to the server in github Pages
 
-  <HashRouter hashType='slash'>
+  <HashRouter>
     <Routes>
       <Route path='/' element={<Game/>} />
       <Route path='instructions' element={<Howtoplay/>} />
