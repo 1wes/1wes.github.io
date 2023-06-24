@@ -31,7 +31,7 @@ class Footer extends React.Component{
                     </div>
                     <span>
                         <span className='copyright-icon'><FontAwesomeIcon icon={faCopyright} /></span>
-                        Wes <span className='copyright_year'>{currentYear}</span>
+                        <a href='https://okemwawes.onrender.com' className='dev-link'  target='blank'>Wes </a><span className='copyright_year'>{currentYear}</span>
                     </span>
                 </div>
             </footer>
