@@ -135,9 +135,11 @@ div .display-counter span{
 .copyright-icon{
     margin-right: 5px;
 }
-/* div.display-counter:not(:last-child){
-    border-right: 2px solid whitesmoke;
-} */
+
+.dev-link{
+    color: whitesmoke;
+}
+
 /* mobile styles for responsive view */
 
 /* for medium devices, up to 480px */
