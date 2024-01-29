@@ -104,7 +104,11 @@ class Game extends React.Component{
         ReactGA.pageview(window.location.pathname);
 
         setInterval(async ()=>{
-            const projects=await fetch('https://mail-projectsapi.onrender.com/projects');
+            const projects = await fetch('https://mail-projectsapi.onrender.com/projects');
+            
+            const users = await fetch('https://sil-ta-api.onrender.com/api/users');
+
+            const jsonUsers = await users.json();
 
             const jsonProjects=await projects.json();
 
