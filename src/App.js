@@ -100,14 +100,6 @@ class Game extends React.Component{
         // on this page/component being added to a tree, 
     componentDidMount() {
 
-        const fetchUsers = async () => {
-            const users = await fetch('https://sil-ta-api.onrender.com/api/users');
-
-            const jsonUsers = await users.json();
-        }
-
-        fetchUsers();
-
         // tracking the page views
         ReactGA.pageview(window.location.pathname);
 
@@ -117,8 +109,6 @@ class Game extends React.Component{
             const users = await fetch('https://sil-ta-api.onrender.com/api/users');
 
             const jsonUsers = await users.json();
-
-            console.log(jsonUsers);
 
             const jsonProjects=await projects.json();
 
