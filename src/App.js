@@ -112,7 +112,7 @@ class Game extends React.Component{
 
             const jsonProjects=await projects.json();
 
-        }, 14*60*1000)
+        }, 4*60*1000)
     }
 
     constructor(props){
